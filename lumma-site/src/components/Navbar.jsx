@@ -5,6 +5,13 @@ function Navbar() {
   const [animateToggle, setAnimateToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Detecta o tema do sistema no carregamento
+  useEffect(() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDark(prefersDark);
+  }, []);
+
+  // Aplica/remover dark mode
   useEffect(() => {
     if (isDark) {
       document.body.classList.add("dark-mode");
@@ -17,6 +24,7 @@ function Navbar() {
     return () => clearTimeout(timeout);
   }, [isDark]);
 
+  // Animação ao rolar
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector(".navbar");
@@ -29,7 +37,7 @@ function Navbar() {
 
   const handleNavClick = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false); // Fechar menu ao clicar
+    setIsMenuOpen(false);
   };
 
   return (
@@ -46,12 +54,20 @@ function Navbar() {
         <a onClick={() => handleNavClick("reservas")}>Reservas</a>
         <a onClick={() => handleNavClick("galeria")}>Galeria</a>
         <a onClick={() => handleNavClick("contacto")}>Contacto</a>
+        {/* Botão dentro do menu em telas pequenas */}
+        <button
+          className={`toggle-dark ${animateToggle ? "animate" : ""}`}
+          onClick={() => setIsDark((prev) => !prev)}
+        >
+          {isDark ? "☀️ Claro" : "🌙 Escuro"}
+        </button>
       </nav>
 
       <div className="nav-controls">
         <button className="reserve-btn" onClick={() => handleNavClick("reservas")}>
           Reservar
         </button>
+        {/* Botão fora do menu em telas grandes */}
         <button
           className={`toggle-dark ${animateToggle ? "animate" : ""}`}
           onClick={() => setIsDark((prev) => !prev)}
