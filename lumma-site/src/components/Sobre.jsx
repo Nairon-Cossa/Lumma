@@ -1,16 +1,27 @@
-// src/components/Sobre.jsx
-const Sobre = () => (
-  <section id="sobre" className="py-20 px-4 bg-gray-50 dark:bg-zinc-800">
-    <div className="max-w-5xl mx-auto text-center" data-aos="fade-up">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-lumma-gold">
-  Sobre Nós
-</h2>
+import React from "react";
 
-      <p className="text-lg leading-relaxed">
-        O LUMMA é um restaurante que combina tradição com inovação. Localizado no coração da cidade, oferecemos pratos cuidadosamente preparados com ingredientes frescos e locais. Nossa missão é proporcionar experiências gastronômicas inesquecíveis em um ambiente acolhedor.
-      </p>
-    </div>
-  </section>
-);
+function Sobre() {
+  return (
+    <section className="sobre" id="sobre" data-aos="fade-up">
+      <div className="container sobre-container">
+        <div className="sobre-texto">
+          <h2>Sobre Nós</h2>
+          <p>
+            Localizado na sofisticada Rua Mateus Sansão Muthemba, o LUMMA é mais do que um restaurante — é uma experiência sensorial que combina a riqueza da culinária moçambicana com toques internacionais de alta gastronomia.
+          </p>
+          <p>
+            Nossa missão é oferecer pratos preparados com ingredientes frescos e selecionados, em um ambiente elegante e acolhedor, perfeito para momentos inesquecíveis.
+          </p>
+          <p>
+            Com uma equipe dedicada e apaixonada pela arte culinária, garantimos um atendimento personalizado e uma carta de vinhos cuidadosamente selecionada para harmonizar com cada prato.
+          </p>
+        </div>
+        <div className="sobre-imagem">
+          <img src="assets/about.jpg" alt="Restaurante LUMMA" />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default Sobre;

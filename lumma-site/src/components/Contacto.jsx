@@ -1,51 +1,64 @@
-// src/components/Contacto.jsx
-const Contacto = () => (
-  <section
-    id="contacto"
-    className="py-20 px-6 bg-white dark:bg-zinc-900 transition-all"
-    data-aos="fade-up"
-  >
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
-      {/* Detalhes de contacto */}
-      <div className="md:w-1/2 space-y-6">
-       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-lumma-gold">
-  Contacto
-</h2>
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-700 dark:text-zinc-200">Endereço</h3>
-          <p className="text-zinc-600 dark:text-zinc-300">
-            Rua Mateus Sansão Muthemba, 412<br />
-            Maputo, Moçambique
-          </p>
+import React from "react";
+
+function Contacto() {
+  return (
+    <section className="contacto" id="contacto" data-aos="fade-up">
+      <h2>Contacto</h2>
+
+      <div className="contact-wrapper">
+        <div className="contact-info">
+          <h3>Endereço</h3>
+          <p>Rua Mateus Sansão Muthemba, 412<br />Maputo, Moçambique</p>
+
+          <h3>Telefone</h3>
+          <p><a href="tel:+258851912063">+258 851 912 063</a></p>
+
+          <h3>Email</h3>
+          <p><a href="mailto:contacto@lumma.mz">contacto@lumma.mz</a></p>
+
+          <h3>Instagram</h3>
+          <p><a href="https://instagram.com/lumma.mz" target="_blank">@lumma.mz</a></p>
+
+          <a href="https://wa.me/258851912063" className="whatsapp-btn" target="_blank">
+            📲 Reservar via WhatsApp
+          </a>
         </div>
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-700 dark:text-zinc-200">Telefone</h3>
-          <p><a href="tel:+258851912063" className="text-amber-700 dark:text-amber-400 hover:underline">+258 851 912 063</a></p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-700 dark:text-zinc-200">Email</h3>
-          <p><a href="mailto:contacto@lumma.mz" className="text-amber-700 dark:text-amber-400 hover:underline">contacto@lumma.mz</a></p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold text-zinc-700 dark:text-zinc-200">Instagram</h3>
-          <p><a href="https://instagram.com/lumma.mz" target="_blank" className="text-amber-700 dark:text-amber-400 hover:underline">@lumma.mz</a></p>
+
+        <div className="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=Rua+Mateus+Sans%C3%A3o+Muthemba,+Maputo,+Mozambique&output=embed"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
 
-      {/* Mapa */}
-      <div className="md:w-1/2 rounded overflow-hidden shadow-lg">
-        <iframe
-          src="https://www.google.com/maps?q=Rua+Mateus+Sans%C3%A3o+Muthemba,+Maputo,+Mozambique&output=embed"
-          width="100%"
-          height="350"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          className="rounded-md w-full"
-        />
+      <div className="extra-section">
+        <h3>❓ Perguntas Frequentes</h3>
+        <details>
+          <summary>Posso reservar para eventos privados?</summary>
+          <p>Sim! Oferecemos reservas para aniversários, jantares empresariais e outros eventos.</p>
+        </details>
+        <details>
+          <summary>Qual é o horário de funcionamento?</summary>
+          <p>Aberto de Terça a Domingo, das 12h às 23h.</p>
+        </details>
+        <details>
+          <summary>Há opções vegetarianas?</summary>
+          <p>Claro! Nosso menu inclui pratos vegetarianos e veganos preparados com cuidado.</p>
+        </details>
       </div>
-    </div>
-  </section>
-);
+
+      <div className="prato-do-dia">
+        <h3>🍽️ Prato do Dia</h3>
+        <p>Polvo grelhado com purê de batata-doce e redução de vinho tinto.</p>
+      </div>
+
+      <div className="contador">
+        🔥 Mais de <strong>472</strong> reservas feitas este mês!
+      </div>
+    </section>
+  );
+}
 
 export default Contacto;

@@ -1,9 +1,11 @@
-// src/components/Footer.jsx
-const Footer = () => (
-<footer className="bg-lumma-beige text-lumma-dark py-6 text-center text-sm">
-  © {new Date().getFullYear()} LUMMA. Todos os direitos reservados.
-</footer>
+import React from "react";
 
-);
+function Footer() {
+  return (
+    <footer>
+      <p>&copy; 2025 LUMMA Restaurante. Todos os direitos reservados.</p>
+    </footer>
+  );
+}
 
 export default Footer;
