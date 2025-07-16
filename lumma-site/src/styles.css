@@ -707,3 +707,11 @@ form,
     color: #eee;
   }
 }
+.hamburger {
+   color: #d4af37; /* dourado para ficar visível no fundo claro */
+
+}
+
+body.dark-mode .hamburger {
+  color: #d4af37; /* claro no dark mode */
+}
