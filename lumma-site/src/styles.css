@@ -639,3 +639,84 @@ form,
 .toggle-dark.animate {
   transform: rotate(180deg);
 }
+/* Hamburger base */
+.hamburger {
+  display: none; /* escondido no desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #3a2e1f;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Transformação do hamburger para X */
+.bar.open1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.bar.open2 {
+  opacity: 0;
+}
+
+.bar.open3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  /* Mostra hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu móvel - escondido por padrão */
+  nav {
+    position: fixed;
+    top: 64px; /* altura navbar */
+    right: 0;
+    background-color: white;
+    width: 200px;
+    height: calc(100% - 64px);
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Dark mode: ajuste das barras do hamburger */
+body.dark-mode .bar {
+  background-color: #f0eade;
+}
+
+/* Animação do toggle dark mode (opcional, exemplo) */
+.toggle-dark.animate {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
