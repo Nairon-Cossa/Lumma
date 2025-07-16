@@ -55,7 +55,7 @@ function Contacto() {
       </div>
 
       <div className="contador">
-        🔥 Mais de <strong>472</strong> reservas feitas este mês!
+        🔥 Mais de <strong>89</strong> reservas feitas este mês!
       </div>
     </section>
   );
