@@ -59,8 +59,7 @@ function Contacto() {
         </div>
 
         <div className="contact-map">
-          <iframe
-            src="https://www.google.com/maps?q=Rua+Mateus+Sans%C3%A3o+Muthemba,+Maputo,+Mozambique&output=embed"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.7028155485978!2d32.58827499999999!3d-25.9777852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69b4b876f0989%3A0x76e0824a1d8f05a0!2sLumma!5e0!3m2!1sen!2smz!4v1752696227278!5m2!1sen!2smz"
             allowFullScreen
             loading="lazy"
             title="Mapa do Lumma"
