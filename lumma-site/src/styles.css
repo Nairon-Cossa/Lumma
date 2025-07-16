@@ -639,15 +639,16 @@ form,
 .toggle-dark.animate {
   transform: rotate(180deg);
 }
-/* Responsive Navbar */
+
+/* ===== Navbar Responsivo ===== */
 .hamburger {
   display: none;
   font-size: 2rem;
   background: none;
   border: none;
-  cursor: pointer;
   color: #3a2e1f;
-  z-index: 1001;
+  cursor: pointer;
+  z-index: 1100;
 }
 
 .nav-links {
@@ -662,31 +663,36 @@ form,
 
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: 70px;
     left: 0;
     right: 0;
-    background: white;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
-    padding: 1.5rem 0;
+    background: white;
+    padding: 2rem 0;
     display: none;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
   .nav-links.open {
     display: flex;
   }
 
-  body.dark-mode .nav-links {
-    background-color: #1e1e1e;
-  }
-
-  .navbar nav a {
-    font-size: 1.2rem;
+  .nav-links a {
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
   }
 
   .nav-controls {
     display: none;
+  }
+
+  body.dark-mode .nav-links {
+    background: #1e1e1e;
+  }
+
+  body.dark-mode .nav-links a {
+    color: #eee;
   }
 }

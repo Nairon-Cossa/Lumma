@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../styles.css";
 
 function Navbar() {
   const [isDark, setIsDark] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [animateToggle, setAnimateToggle] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -28,33 +27,29 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = () => {
-    setMenuOpen(false);
+  const handleNavClick = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false); // Fechar menu ao clicar
   };
 
   return (
     <header className="navbar">
       <img src="assets/Logo.jpg" alt="Logo LUMMA" className="logo" />
 
-      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         ☰
       </button>
 
-      <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-        <a href="#sobre" onClick={handleLinkClick}>Sobre</a>
-        <a href="#menu" onClick={handleLinkClick}>Menu</a>
-        <a href="#reservas" onClick={handleLinkClick}>Reservas</a>
-        <a href="#galeria" onClick={handleLinkClick}>Galeria</a>
-        <a href="#contacto" onClick={handleLinkClick}>Contacto</a>
+      <nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+        <a onClick={() => handleNavClick("sobre")}>Sobre</a>
+        <a onClick={() => handleNavClick("menu")}>Menu</a>
+        <a onClick={() => handleNavClick("reservas")}>Reservas</a>
+        <a onClick={() => handleNavClick("galeria")}>Galeria</a>
+        <a onClick={() => handleNavClick("contacto")}>Contacto</a>
       </nav>
 
       <div className="nav-controls">
-        <button
-          className="reserve-btn"
-          onClick={() =>
-            document.getElementById("reservas").scrollIntoView({ behavior: "smooth" })
-          }
-        >
+        <button className="reserve-btn" onClick={() => handleNavClick("reservas")}>
           Reservar
         </button>
         <button
