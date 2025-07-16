@@ -34,7 +34,7 @@ function Contacto() {
       </div>
 
       <div className="extra-section">
-        <h3>❓ Perguntas Frequentes</h3>
+        <h3> Perguntas Frequentes</h3>
         <details>
           <summary>Posso reservar para eventos privados?</summary>
           <p>Sim! Oferecemos reservas para aniversários, jantares empresariais e outros eventos.</p>
@@ -50,12 +50,11 @@ function Contacto() {
       </div>
 
       <div className="prato-do-dia">
-        <h3>🍽️ Prato do Dia</h3>
+        <h3>Prato do Dia</h3>
         <p>Polvo grelhado com purê de batata-doce e redução de vinho tinto.</p>
       </div>
 
-      <div className="contador">
-        🔥 Mais de <strong>89</strong> reservas feitas este mês!
+      <div className="contador">Mais de <strong>89</strong> reservas feitas este mês!
       </div>
     </section>
   );
