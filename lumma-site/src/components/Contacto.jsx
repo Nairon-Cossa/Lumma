@@ -1,4 +1,5 @@
 import React from "react";
+import { FiMapPin, FiPhone, FiMail, FiInstagram } from "react-icons/fi";
 
 function Contacto() {
   return (
@@ -7,20 +8,53 @@ function Contacto() {
 
       <div className="contact-wrapper">
         <div className="contact-info">
-          <h3>Endereço</h3>
-          <p>Rua Mateus Sansão Muthemba, 412<br />Maputo, Moçambique</p>
+          <h3>
+            <FiMapPin style={{ marginRight: "8px" }} />
+            Endereço
+          </h3>
+          <p>
+            Rua Mateus Sansão Muthemba, 412
+            <br />
+            Maputo, Moçambique
+          </p>
 
-          <h3>Telefone</h3>
-          <p><a href="tel:+258851912063">+258 851 912 063</a></p>
+          <h3>
+            <FiPhone style={{ marginRight: "8px" }} />
+            Telefone
+          </h3>
+          <p>
+            <a href="tel:+258851912063">+258 851 912 063</a>
+          </p>
 
-          <h3>Email</h3>
-          <p><a href="mailto:contacto@lumma.mz">contacto@lumma.mz</a></p>
+          <h3>
+            <FiMail style={{ marginRight: "8px" }} />
+            Email
+          </h3>
+          <p>
+            <a href="mailto:contacto@lumma.mz">contacto@lumma.mz</a>
+          </p>
 
-          <h3>Instagram</h3>
-          <p><a href="https://instagram.com/lumma.mz" target="_blank">@lumma.mz</a></p>
+          <h3>
+            <FiInstagram style={{ marginRight: "8px" }} />
+            Instagram
+          </h3>
+          <p>
+            <a
+              href="https://instagram.com/lumma.mz"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @lumma.mz
+            </a>
+          </p>
 
-          <a href="https://wa.me/258851912063" className="whatsapp-btn" target="_blank">
-            📲 Reservar via WhatsApp
+          <a
+            href="https://wa.me/258851912063"
+            className="whatsapp-btn"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reservar via WhatsApp
           </a>
         </div>
 
@@ -29,6 +63,7 @@ function Contacto() {
             src="https://www.google.com/maps?q=Rua+Mateus+Sans%C3%A3o+Muthemba,+Maputo,+Mozambique&output=embed"
             allowFullScreen
             loading="lazy"
+            title="Mapa do Lumma"
           ></iframe>
         </div>
       </div>
@@ -54,7 +89,8 @@ function Contacto() {
         <p>Polvo grelhado com purê de batata-doce e redução de vinho tinto.</p>
       </div>
 
-      <div className="contador">Mais de <strong>89</strong> reservas feitas este mês!
+      <div className="contador">
+        Mais de <strong>89</strong> reservas feitas este mês!
       </div>
     </section>
   );
